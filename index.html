@@ -1,0 +1,47 @@
+<html>
+        <head>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            <link href="style.css" rel="stylesheet">
+        </head>
+        <body>
+
+            <h1 id="heading" class="MyClass">Heading 1</h1>
+
+            <button onclick="changeClass()">Change class of heading 1</button>
+
+            <button id="myData" data-first-name = "Mahesh" data-last-name = "Sharma" onclick="getDataSets()">Get datasets</button>
+
+            <button id="addElement" onclick="addElement()">Add Element</button>
+            <div id="new">
+                <p id="p1">Element 1</p>
+                <p id="p2">Element 2</p>
+            </div>
+
+            <button id="addRequest" onclick="getRequest()">Send http get request</button>
+            <p id="demo"></p>
+
+            <input type="text" id="testInput">
+            <button  onclick="setValue()">Set value</button>
+            <button  onclick="getValue()">Get value</button>
+
+            <button onclick="postRequest()">Send an HTTP POST request to a page and get the result back</button>
+            <hr/>
+
+            <script type="text/javascript" src="main.js">
+
+            </script>
+            <script>
+                function postRequest(){
+                    $.post("demo_test_post.asp",
+                        {
+                            name: "Mahesh Sharma",
+                            city: "Kathmandu"
+                        },
+                        function(data,status){
+                            alert("Data: " + data + "\nStatus: " + status);
+                        });
+                }
+            </script>
+
+    </body>
+</html>
